@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Latest Blogs</h1>
+        <ul class="list-group">
+            {% for post in posts %}
+            <li class="list-group-item"><a href="{% url 'blogs:detail' post.id %}">{{post.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
